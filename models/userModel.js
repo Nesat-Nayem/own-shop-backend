@@ -13,19 +13,48 @@ const userSchema = new Schema(
       unique: true,
       require: true,
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
+    companyName: {
+      type: String,
+      trim: true,
     },
+    companyWebsite: {
+      type: String,
+      trim: true,
+    },
+    // isAdmin: {
+    //   type: Boolean,
+    //   default: false,
+    // },
     password: {
       type: String,
       require: true,
     },
     photoURL: {
       type: String,
-      require: true,
-      default: "https://i.ibb.co/SQmsJnB/avatar-user.jpg",
+
     },
+    // role: {
+    //   type: String,
+    //   require: true,
+    // },
+
+    phone: {
+      type: Number,
+  
+    },
+    access: {
+      type: String,
+      require: true,
+
+    },
+    role: {
+      type: String,
+      require: true,
+    },
+    location: {
+      type: String,
+      trim: true,
+    }
   },
   {
     timestamps: true,

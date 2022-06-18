@@ -1,4 +1,4 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const { Product } = require("../models/productModel");
 // const { Product } = require("../models/jobModel");
 
@@ -53,6 +53,7 @@ const singleProduct = async(req,res) =>{
 const postProduct = async (req, res) =>{
     try {
         const product = new Product(req.body);
+        console.log(req.body)
         const result = await product.save();
         res.json(result)
     } catch (error) {

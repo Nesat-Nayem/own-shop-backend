@@ -4,30 +4,51 @@ const {User} = require("../models/userModel");
 const { generateToken } = require("../utils/generateToken");
 // const {generateToken} = require("../utils/generateToken")
 
+
+// get all user 
+
+const getUser = async(req,res) =>{
+    try{
+        const user = await User.find({})
+        res.json(user)
+    }catch(err){
+        res.status(400).json({erorr : err.message});
+    }
+}
+
+
 // create new user 
 
 const signup = async(req,res) =>{
     try{
-        const {username, email, password} = req.body;
+        // const {username, email, password, role, access} = req.body;
+        const {email} = req.body;
         const userExists = await User.findOne({email});
         if(userExists){
             res.status(500).json("User Already Exists")
         }else{
-            const user = await User.create({ username, email, password })
+            // const user = await User.create({ username, email, password, role, access })
 
-            if(user){
-                res.status(201).json({
-                    _id: user._id,
-                    username:user.username,
-                    email:user.email,
-                    isAdmin:user.isAdmin,
-                    photoURL:user.photoURL,
-                    token:generateToken(user._id)
-                });
+            // if(user){
+            //     res.status(201).json({
+            //         _id: user._id,
+            //         username:user.username,
+            //         email:user.email,
+            //         // isAdmin:user.isAdmin,
+            //         photoURL:user.photoURL,
+            //         role:user.role,
+            //         access:user.access,
+            //         token:generateToken(user._id)
+            //     });
+
+            const user = new User(req.body);
+           
+            const result = await user.save();
+            res.json(result);
                
-            }else{
-                    res.status(400).json("User Already Exists");
-            }
+            // }else{
+            //         res.status(400).json("User Already Exists");
+            // }
         }
     }catch (err) {
         res.status(500).send(err.message)
@@ -46,7 +67,7 @@ const signup = async(req,res) =>{
                     _id:user._id,
                     username:user.username,
                     email:user.email,
-                    isAdmin:user.isAdmin,
+                    role:user.role,
                     photoURL:user.photoURL,
                     token:generateToken(user._id),
                 });
@@ -60,4 +81,4 @@ const signup = async(req,res) =>{
         }
  };
 
- module.exports = {signup,signin};
+ module.exports = {signup,signin, getUser};
