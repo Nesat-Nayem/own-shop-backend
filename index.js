@@ -12,6 +12,7 @@ const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes")
 const orderRoutes = require("./routes/orderRoutes")
+const categoryRoutes = require("./routes/category")
 
 
 const { errorHandler } = require("./middlewares/errorHandler");
@@ -33,6 +34,7 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api", categoryRoutes);
 
 
 // default error handler 
