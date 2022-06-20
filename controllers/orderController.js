@@ -1,6 +1,6 @@
-const Order = require("../models/orderModel")
 const mongoose = require("mongoose")
-
+// const { Order } = require("../models/orderModel")
+const { Order } = require("../models/orderModel")
 // get all order 
 
 const allOrders = async(req,res) =>{

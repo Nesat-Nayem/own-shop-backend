@@ -27,19 +27,7 @@ const signup = async(req,res) =>{
         if(userExists){
             res.status(500).json("User Already Exists")
         }else{
-            // const user = await User.create({ username, email, password, role, access })
 
-            // if(user){
-            //     res.status(201).json({
-            //         _id: user._id,
-            //         username:user.username,
-            //         email:user.email,
-            //         // isAdmin:user.isAdmin,
-            //         photoURL:user.photoURL,
-            //         role:user.role,
-            //         access:user.access,
-            //         token:generateToken(user._id)
-            //     });
 
             const user = new User(req.body);
            

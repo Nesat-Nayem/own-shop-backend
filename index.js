@@ -12,6 +12,8 @@ const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes")
 const orderRoutes = require("./routes/orderRoutes")
+
+
 const { errorHandler } = require("./middlewares/errorHandler");
 
 const app = express();
@@ -42,7 +44,7 @@ app.use(errorHandler)
 // test route 
 
 app.get("/", (req,res) =>{
-    res.send("ownsell server")
+    res.send("ownsell server is running  ...")
 })
 
 // payment route 

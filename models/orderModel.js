@@ -1,32 +1,15 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const orderSchema = new Schema(
-  {
-    category: {
-      type: String,
-   
-    },
+const orderSchema = new Schema({
 
   
-    desc: {
-        type: String,
-        require: true,
-      },
+      //   img: {
+      //   type: String,
+      //   require: true,
+      // },
 
-      id: {
-        type: Number,
-        require: true,
-    },
-        img: {
-        type: String,
-        require: true,
-      },
-      location: {
-        type: String,
-        require: true,
-      },
-      name: {
+      username: {
         type: String,
         require: true,
       },
@@ -34,14 +17,19 @@ const orderSchema = new Schema(
         type: Number,
         require: true,
       },
-      review: {
-        type: Number,
+      serviceName: {
+        type: String,
         require: true,
       },
-      _id: {
-        type: Number,
+      status:{
+        type: String,
         require: true,
       },
+      providerName:{
+        type: String,
+        require: true,
+      }
+
    
   },
   {
@@ -51,4 +39,4 @@ const orderSchema = new Schema(
 
 const Order = mongoose.model("Order", orderSchema);
 
-module.exports = Order;
+module.exports = {Order};
