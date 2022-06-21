@@ -1,5 +1,7 @@
+const mongoose = require("mongoose");
 const Category = require('../models/category');
 const slugify = require('slugify');
+// const mongoose = require('mongoose')
 
 
 
@@ -65,3 +67,21 @@ exports.getCategories = (req,res) =>{
     }
    })
 }
+
+// get a single category 
+
+// const singleCategories = async(req,res) =>{
+    exports.singleCategories = async(req,res) =>{
+    try{
+        const id = req.params.id;
+        const quiry = {_id: mongoose.Types.ObjectId(id)};
+        const result = await Category.findOne(quiry);
+        res.send(result)
+    }catch(err){
+        res.status(500).json({error:err.message})
+    }
+}
+
+// module.exports = {
+//     singleCategories
+// }
