@@ -8,13 +8,24 @@ const categorySchema = new mongoose.Schema({
         required: true,
         trim:true
     },
+    // categoryName : {
+    //     type: String,
+    //     required: true,
+    //     trim:true
+    // },
+    img : {
+        type: String,
+        required: true,
+        trim:true
+    },
     slug : {
         type : String,
         required:true,
         unique:true
     },
     parentId : {
-        type: String
+        type: String,
+        // required:true
     }
 
 }, { timestamps: true });

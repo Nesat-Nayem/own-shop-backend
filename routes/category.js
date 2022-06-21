@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
+
 const express = require('express');
-const Category = require('../models/category');
-// const Category = require('../models/category')
-const slugify = require('slugify');
+
+const { addCategory, getCategories } = require('../controllers/category');
 const router = express.Router();                                                      
 
-router.post('/category/create')
+router.post('/category/create', addCategory)
+router.get('/category/getcategories', getCategories)
 
 module.exports = router;
