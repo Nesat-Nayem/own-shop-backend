@@ -29,4 +29,15 @@ const creatProvider = async(req,res) =>{
     }
 };
 
-module.exports= {creatProvider}
+// get all provider 
+const getProvider = async(req,res)  =>{
+    try{
+        const provider = await Provider.find({});
+        res.json(provider)
+    }catch(err){
+            res.status(500).json({error:err.message})
+    }
+}
+
+
+module.exports= {creatProvider,getProvider}

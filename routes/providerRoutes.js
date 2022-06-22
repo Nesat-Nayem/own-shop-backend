@@ -1,11 +1,12 @@
 const express = require("express");
-const { creatProvider } = require("../controllers/providerControler");
+const { creatProvider, getProvider } = require("../controllers/providerControler");
 
 
 const router = express.Router()
 
 
 router.post("/createprovider", creatProvider)
+router.get("/getprovider", getProvider)
 
 
 module.exports = router;
