@@ -13,6 +13,8 @@ const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes")
 const orderRoutes = require("./routes/orderRoutes")
 const categoryRoutes = require("./routes/category")
+const providerRoutes = require("./routes/providerRoutes")
+// const  creatProvider  = require("./controllers/providerControler");
 
 
 const { errorHandler } = require("./middlewares/errorHandler");
@@ -35,6 +37,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api", categoryRoutes);
+app.use("/api", providerRoutes);
 
 
 // default error handler 

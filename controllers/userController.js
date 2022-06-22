@@ -57,6 +57,7 @@ const signup = async(req,res) =>{
                     email:user.email,
                     role:user.role,
                     photoURL:user.photoURL,
+                    access:user.access,
                     token:generateToken(user._id),
                 });
 

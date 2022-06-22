@@ -21,10 +21,7 @@ const userSchema = new Schema(
       type: String,
       trim: true,
     },
-    // isAdmin: {
-    //   type: Boolean,
-    //   default: false,
-    // },
+ 
     password: {
       type: String,
       require: true,
@@ -33,10 +30,7 @@ const userSchema = new Schema(
       type: String,
 
     },
-    // role: {
-    //   type: String,
-    //   require: true,
-    // },
+
 
     phone: {
       type: Number,
