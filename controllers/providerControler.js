@@ -1,3 +1,4 @@
+mongoose = require("mongoose")
 
 const bcrypt = require("bcrypt");
 
@@ -39,5 +40,30 @@ const getProvider = async(req,res)  =>{
     }
 }
 
+const updateProvider = async(req,res) =>{
+    try {
+        const id = req.params.id;
+        const filter = { _id: mongoose.Types.ObjectId(id) };
+        const updateDoc = { $set: req.body };
+        const options = { upsert: true };
+        const result = await Provider.findOneAndUpdate(filter, updateDoc, options);
+        res.json(result);
+      } catch (err) {
+        res.status(500).json({ error: err.message });
+      }
+}
 
-module.exports= {creatProvider,getProvider}
+const deleteProvider = async(req,res) =>{
+    try{
+        const id = req.params.id;
+        const query = { _id: mongoose.Types.ObjectId(id) };
+        const result = await Provider.deleteOne(query);
+        res.json({ _id: id, deletedCount: result.deletedCount });
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+      }
+}
+
+
+module.exports= {creatProvider,getProvider,updateProvider,deleteProvider}
