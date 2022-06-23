@@ -55,6 +55,7 @@ const signup = async(req,res) =>{
                     _id:user._id,
                     username:user.username,
                     email:user.email,
+                    phone:user.phone,
                     role:user.role,
                     photoURL:user.photoURL,
                     access:user.access,

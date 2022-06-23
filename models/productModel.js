@@ -10,7 +10,7 @@ const productSchema = new Schema({
         type:String,
         require:true,
     },
-    img:{
+    photoURL:{
         type:String,
         require:true,
     },
@@ -18,11 +18,12 @@ const productSchema = new Schema({
         type:Number,
         require:true,
     },
-    review:{
-        type:Number,
+ 
+    category:{
+        type:String,
         require:true,
     },
-    category:{
+    subcategory:{
         type:String,
         require:true,
     },
@@ -30,10 +31,27 @@ const productSchema = new Schema({
         type:String,
         require:true,
     },
-    desc:{
+    longdesc:{
         type:String,
         require:true,
     },
+    shrotdesc:{
+        type:String,
+        require:true,
+    },
+    providername:{
+        type:String,
+        require:true,
+    },
+    provideremail:{
+        type:String,
+        require:true,
+    },
+    providernumber:{
+        type:Number,
+        require:true,
+    },
+
 
 
 
