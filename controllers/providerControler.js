@@ -1,6 +1,7 @@
 mongoose = require("mongoose")
 
 const bcrypt = require("bcrypt");
+// const { default: mongoose } = require("mongoose");
 
 const {Provider} = require("../models/providerModel");
 
@@ -65,5 +66,14 @@ const deleteProvider = async(req,res) =>{
       }
 }
 
+// get single provider by id 
 
-module.exports= {creatProvider,getProvider,updateProvider,deleteProvider}
+const getmyid = async(req,res) =>{
+    const id = req.params.id;
+    const query = {_id: mongoose.Types.ObjectId(id)};
+    const result = await Provider.find(query)
+    res.json(result)
+
+}
+
+module.exports= {creatProvider,getProvider,updateProvider,deleteProvider,getmyid}
