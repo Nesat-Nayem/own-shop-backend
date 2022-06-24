@@ -10,7 +10,7 @@ const productSchema = new Schema({
         type:String,
         require:true,
     },
-    photoURL:{
+    img:{
         type:String,
         require:true,
     },
