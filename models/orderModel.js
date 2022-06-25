@@ -4,15 +4,30 @@ const { Schema } = mongoose;
 const orderSchema = new Schema({
 
   
-      //   img: {
-      //   type: String,
-      //   require: true,
-      // },
+ 
 
       username: {
         type: String,
         require: true,
       },
+      
+      email: {
+        type: String,
+        require: true,
+      },
+      userAddress: {
+        type: String,
+        require: true,
+      },
+      userRegion: {
+        type: String,
+        require: true,
+      },
+      userNumber: {
+        type: Number,
+        require: true,
+      },
+
       price: {
         type: Number,
         require: true,
@@ -28,7 +43,19 @@ const orderSchema = new Schema({
       providerName:{
         type: String,
         require: true,
-      }
+      },
+      providerEmail:{
+        type: String,
+        require: true,
+      },
+      providerNumber:{
+        type: Number,
+        require: true,
+      },
+      serviceImg: {
+        type: String,
+        require: true,
+      },
 
    
   },
