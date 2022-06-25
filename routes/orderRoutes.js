@@ -3,6 +3,7 @@ const express = require("express");
 const {
   allOrders,
   postOrder,
+  userOrders,
 
 } = require("../controllers/orderController");
 
@@ -11,7 +12,7 @@ const router = express.Router();
 router.get("/allorder", allOrders);
 
 // get user orders
-// router.get("/user/:userId", userOrders);
+router.get("/user/:userId", userOrders);
 
 // post orders
 router.post("/postorder", postOrder);

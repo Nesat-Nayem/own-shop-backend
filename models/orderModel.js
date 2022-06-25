@@ -6,9 +6,14 @@ const orderSchema = new Schema({
   
  
 
+
       username: {
         type: String,
         require: true,
+      },
+      userId:{
+        type: String,
+        require:true,
       },
       
       email: {
