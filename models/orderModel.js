@@ -15,6 +15,10 @@ const orderSchema = new Schema({
         type: String,
         require:true,
       },
+      serviceId:{
+        type: Number,
+        require:true,
+      },
       
       email: {
         type: String,

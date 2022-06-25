@@ -20,6 +20,7 @@ function createCategories(categories,parentId = null){
             _id: cate._id,
             name: cate.name,
             parentName: cate.parentName,
+            parentId: cate.parentId,
             createdAt:cate.createdAt,
             img:cate.img,
             slug: cate.slug,
@@ -35,6 +36,7 @@ function createCategories(categories,parentId = null){
     const categoryObj = {
         name: req.body.name,
         parentName: req.body.parentName,
+        parentId: req.body.parentId,
         img:req.body.img,
         createdAt:req.body.createdAt,
         slug: slugify(req.body.name)
