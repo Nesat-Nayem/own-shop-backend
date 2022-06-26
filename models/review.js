@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const reviewSchema = new Schema({
-  blogId: {
+    productId: {
     type: String,
     require: true,
   },
@@ -14,8 +14,12 @@ const reviewSchema = new Schema({
 //     type: String,
 //     require: true,
 //   },
-  text: {
+review: {
     type: String,
+    require: true,
+  },
+  rating: {
+    type: Number,
     require: true,
   },
   date: {
