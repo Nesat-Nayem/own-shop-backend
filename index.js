@@ -14,6 +14,7 @@ const productRoutes = require("./routes/productRoutes")
 const orderRoutes = require("./routes/orderRoutes")
 const categoryRoutes = require("./routes/category")
 const providerRoutes = require("./routes/providerRoutes")
+const reviewRoutes = require("./routes/review")
 // const  creatProvider  = require("./controllers/providerControler");
 
 
@@ -38,6 +39,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", providerRoutes);
+app.use("/api/postreview", reviewRoutes);
 
 
 // default error handler 
