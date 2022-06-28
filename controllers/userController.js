@@ -88,4 +88,19 @@ const signup = async(req,res) =>{
         }
  };
 
- module.exports = {signup,signin, getUser,getuserbyemail};
+//  update user access 
+
+const updateUserAccess = async(req,res) =>{
+    try {
+        const id = req.params.id;
+        const filter = { _id: mongoose.Types.ObjectId(id) };
+        const updateDoc = { $set: req.body };
+        const options = { upsert: true };
+        const result = await User.findOneAndUpdate(filter, updateDoc, options);
+        res.json(result);
+      } catch (err) {
+        res.status(500).json({ error: err.message });
+      }
+}
+
+ module.exports = {signup,signin, getUser,getuserbyemail, updateUserAccess};
