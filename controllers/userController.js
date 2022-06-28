@@ -17,6 +17,23 @@ const getUser = async(req,res) =>{
 }
 
 
+// get user by email 
+
+// const getmyid = async(req,res) =>{
+//     const id = req.params.id;
+//     const query = {_id: mongoose.Types.ObjectId(id)};
+//     const result = await Provider.find(query)
+//     res.json(result)
+
+// }
+
+const getuserbyemail = async(req,res) =>{
+    const email = req.params.email;
+    const query = {email : email};
+    const result = await User.find(query)
+    res.json(result)
+}
+
 // create new user 
 
 const signup = async(req,res) =>{
@@ -71,4 +88,4 @@ const signup = async(req,res) =>{
         }
  };
 
- module.exports = {signup,signin, getUser};
+ module.exports = {signup,signin, getUser,getuserbyemail};
