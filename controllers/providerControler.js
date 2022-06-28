@@ -68,12 +68,12 @@ const deleteProvider = async(req,res) =>{
 
 // get single provider by id 
 
-// const getmyid = async(req,res) =>{
-//     const id = req.params.id;
-//     const query = {_id: mongoose.Types.ObjectId(id)};
-//     const result = await Provider.find(query)
-//     res.json(result)
+const getmyid = async(req,res) =>{
+    const id = req.params.id;
+    const query = {_id: mongoose.Types.ObjectId(id)};
+    const result = await Provider.find(query)
+    res.json(result)
 
-// }
+}
 
-module.exports= {creatProvider,getProvider,updateProvider,deleteProvider}
+module.exports= {creatProvider,getProvider,updateProvider,deleteProvider,getmyid}
