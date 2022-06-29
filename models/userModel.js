@@ -30,6 +30,10 @@ const userSchema = new Schema(
       type: String,
 
     },
+    lincence: {
+      type: String,
+
+    },
 
 
     phone: {
