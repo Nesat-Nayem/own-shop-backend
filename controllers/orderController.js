@@ -49,7 +49,36 @@ const userOrders = async (req, res) => {
   
     //     res.send(result);
     //   });
+
+    // get order by email 
+
+    const orderbymail = async(req,res) =>{
+      try{
+        const email = req.params.email;
+            const query = { email: email };
+            const result = await Order.find(query);
+      
+            res.send(result);
+
+      }catch(error){
+          res.status(500).json({error: error.message})
+      }
+    }
+  
+    // get provider email quiery 
+    const orderproviderbymail = async(req,res) =>{
+      try{
+        const email = req.params.email;
+            const query = { providerEmail: email };
+            const result = await Order.find(query);
+      
+            res.send(result);
+
+      }catch(error){
+          res.status(500).json({error: error.message})
+      }
+    }
   
 
 
-module.exports = {postOrder,allOrders, userOrders}
+module.exports = {postOrder,allOrders, userOrders, orderbymail,orderproviderbymail}
