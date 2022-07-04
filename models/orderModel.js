@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const orderSchema = new Schema({
-
-  
- 
-
-
       username: {
         type: String,
         require: true,
@@ -49,6 +44,10 @@ const orderSchema = new Schema({
         type: String,
         require: true,
       },
+      // currentDate:{
+      //   type: Date,
+      //   require: true,
+      // },
       providerName:{
         type: String,
         require: true,
