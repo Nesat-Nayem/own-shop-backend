@@ -36,6 +36,11 @@ const orderSchema = new Schema({
         type: Number,
         require: true,
       },
+      category: {
+        type: String,
+        require: true,
+      },
+    
       serviceName: {
         type: String,
         require: true,

@@ -43,7 +43,13 @@ const productSchema = new Schema({
         type:String,
         require:true,
     },
+    
     provideremail:{
+        type:String,
+        require:true,
+    },
+
+    providerPhoto:{
         type:String,
         require:true,
     },

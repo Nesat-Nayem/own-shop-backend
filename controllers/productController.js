@@ -27,7 +27,7 @@ const singleProduct = async(req,res) =>{
     }
 }
 
-// get product by category 
+// get product by provider email 
 // app.get("/products/category/:cagegory", async(req,res)=>{
 //     const category = req.params.cagegory;
 //     const quiry = {category:category}
@@ -35,6 +35,17 @@ const singleProduct = async(req,res) =>{
 //     res.json(result)
   
 //   })
+
+  const providerTotalProduct = async(req,res)=>{
+    try{
+        const email = req.params.email;
+        const quiry = {provideremail:email}
+        const result = await Product.find(quiry);
+        res.json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+  }
 
   const pcategory = async(req,res)=>{
     try{
@@ -68,5 +79,6 @@ module.exports = {
     postProduct,
   getProduct,
   singleProduct,
-  pcategory
+  pcategory,
+  providerTotalProduct
   };
