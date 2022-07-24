@@ -1,5 +1,5 @@
 const express = require("express");
-const {pcategory, singleProduct,  postProduct, getProduct, providerTotalProduct } = require("../controllers/productController");
+const {pcategory, singleProduct,  postProduct, getProduct, providerTotalProduct, deleteservices } = require("../controllers/productController");
 
 const router = express.Router()
 
@@ -23,4 +23,6 @@ router.post("/postProduct" , postProduct)
 
 router.get("/providerservices/:email" , providerTotalProduct)
 
+// delete by id 
+router.delete("/deleteProduct/:id", deleteservices)
 module.exports = router;

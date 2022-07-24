@@ -58,6 +58,34 @@ const singleProduct = async(req,res) =>{
     }
   }
 
+//   delete sample 
+// const deleteProvider = async(req,res) =>{
+//     try{
+//         const id = req.params.id;
+//         const query = { _id: mongoose.Types.ObjectId(id) };
+//         const result = await Provider.deleteOne(query);
+//         res.json({ _id: id, deletedCount: result.deletedCount });
+
+//     } catch (err) {
+//         res.status(500).json({ error: err.message });
+//       }
+// }
+
+//   delete sample 
+
+//   delete product by id 
+
+const deleteservices = async (req,res) =>{
+try{
+    const id = req.params.id;
+    const query = {_id: mongoose.Types.ObjectId(id)};
+    const result = await Product.deleteOne(query);
+    res.json({_id: id, deletedCount: result.deletedCount})
+} catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+}
+
 
 // post a product
 
@@ -80,5 +108,6 @@ module.exports = {
   getProduct,
   singleProduct,
   pcategory,
-  providerTotalProduct
+  providerTotalProduct,
+  deleteservices
   };
