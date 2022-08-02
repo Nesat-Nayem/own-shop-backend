@@ -14,6 +14,10 @@ const productSchema = new Schema({
         type:String,
         require:true,
     },
+    gallery:{
+        type:Array,
+        require:true,
+    },
     price:{
         type:Number,
         require:true,
